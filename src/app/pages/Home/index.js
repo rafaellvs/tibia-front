@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     setIsFetching(true)
 
-    fetch('http://localhost:3000/boots')
+    fetch('https://tibia-db.herokuapp.com/boots')
       .then(response => response.json())
       .then(response => {
         setData(response)

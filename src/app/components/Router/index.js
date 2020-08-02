@@ -3,8 +3,7 @@ import { Router } from '@reach/router'
 
 import NavBar from 'app/components/NavBar'
 
-// import Home from 'app/pages/Home'
-import HomeMock from 'app/pages/HomeMock'
+import Home from 'app/pages/Home'
 
 import { Section, MainContent, Container } from './styled'
 
@@ -21,8 +20,7 @@ const AppRouter = () => {
           <Router>
             <Page404 default />
 
-            {/* <Home path='/' /> */}
-            <HomeMock path='/' />
+            <Home path='/' />
           </Router>
         </Container>
       </MainContent>
