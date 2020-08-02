@@ -1,16 +1,8 @@
-import styled, { css } from 'styled-components'
-
-import theme from 'app/helpers/theme'
+import styled from 'styled-components'
 
 const Cell = styled.td`
   max-width: ${({ width }) => width || 'unset'};
-  
-  ${
-    ({ variant }) => variant &&
-      css`
-        ${theme.variants[variant]}
-      `
-  }
+  text-align: ${({ align }) => align || 'left'};
 `
 
 export default Cell

@@ -1,47 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import tooltipContent from 'app/helpers/tooltips'
-
-import Tooltip from 'app/components/core/Tooltip'
+import Thead from './Thead'
+import Tbody from './Tbody'
 
 import { CoreTable } from './styled'
 
-const findTooltip = (column) => {
-  const found =
-    tooltipContent.find(tooltip => tooltip.label === column)
-
-  return found ? found.content : ''
-}
-
-const Table = ({ columns, children }) => {
-  const renderColumns = () =>
-    columns.map(column =>
-      <th key={column}>
-        <Tooltip content={findTooltip(column)}>
-          {column}
-        </Tooltip>
-      </th>
-    )
+const Table = ({ data }) => {
+  const columns = Object.keys(data[0])
 
   return (
     <CoreTable>
-      <thead>
-        <tr>
-          {renderColumns()}
-        </tr>
-      </thead>
-
-      <tbody>
-        {children}
-      </tbody>
+      <Thead columns={columns} />
+      <Tbody
+        columns={columns}
+        data={data}
+      />
     </CoreTable>
   )
 }
 
 Table.propTypes = {
-  columns: PropTypes.array,
-  children: PropTypes.node,
+  data: PropTypes.array,
 }
 
 export default Table

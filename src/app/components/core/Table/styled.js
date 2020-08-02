@@ -5,29 +5,22 @@ import theme from 'app/helpers/theme'
 export const CoreTable = styled.table`
   table-layout: fixed;
   border-collapse: collapse;
-  color: ${theme.colors.white};
 
   th, td {
-    text-align: left;
+    text-align: center;
     padding: .5rem .8rem;
 
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
+    &:first-child, :last-child {
+      text-align: left;
     }
   }
 
-  tbody {
-    tr {
-      transition: background .3s;
-      
-      &:hover {
-        background: ${theme.colors.hover};
-        cursor: pointer;
-      }
+  tbody tr {
+    height: 100px;
+    transition: background .3s, height .3s;
+
+    &:hover {
+      background: ${theme.colors.hover};
     }
   }
 `
