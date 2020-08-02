@@ -5,15 +5,13 @@ import theme from 'app/helpers/theme'
 import CoreText from './text'
 
 const Text = styled(CoreText)`
-  padding: ${({ padding }) => padding || '0'};
   margin: 0;
-
-  ${
-    props => props.variant &&
-      css`
-        ${theme.variants[props.variant]}
-      `
-  }
+  padding: ${({ padding }) => padding || '0'};
+  text-align: ${({ align }) => align};
+  
+  ${css`${theme.variants.default}`}
+  
+  ${({ variant }) => variant && css`${theme.variants[variant]}`}
 `
 
 export default Text
