@@ -4,6 +4,7 @@ import { Router } from '@reach/router'
 import NavBar from 'app/components/NavBar'
 
 import Home from 'app/pages/Home'
+import Template from 'app/pages/Template'
 
 import { Section, MainContent, Container } from './styled'
 
@@ -21,6 +22,8 @@ const AppRouter = () => {
             <Page404 default />
 
             <Home path='/' />
+
+            <Template path='/boots' />
           </Router>
         </Container>
       </MainContent>
