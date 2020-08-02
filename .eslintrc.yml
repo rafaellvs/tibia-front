@@ -14,4 +14,13 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-rules: {}
+rules:
+  comma-dangle: [error, 
+    {
+      objects: always-multiline, 
+      arrays: always-multiline, 
+      imports: always-multiline, 
+      exports: always-multiline,
+    }
+  ]
+  
