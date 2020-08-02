@@ -1,48 +1,52 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Text from 'app/components/core/Text'
-import Image from 'app/components/core/Image'
+import Table from 'app/components/core/Table'
 
-import NavBar from 'app/components/NavBar'
-import Section from 'app/components/core/Section'
-import Footer from 'app/components/Footer'
+import Loading from 'app/components/Loading'
+
+import { Container } from './styled'
 
 const Home = () => {
+  const [data, setData] = useState({ error: false })
+  const [isFetching, setIsFetching] = useState(false)
+
+  useEffect(() => {
+    setIsFetching(true)
+
+    fetch('http://localhost:3000/boots')
+      .then(response => response.json())
+      .then(response => {
+        setData(response)
+        setIsFetching(false)
+      })
+      .catch(err => {
+        setData({ error: err })
+        setIsFetching(false)
+      })
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
+
   return (
-    <>
-      <NavBar />
+    <Container>
+      {isFetching && <Loading />}
 
-      <Section style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-      >
-        <Text component='h1'>
-          react-parcel base project
-        </Text>
+      {data.error && <Text align='center'>Failed fetching data.</Text>}
 
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-        }}
-        >
-          <Image
-            src='https://parceljs.org/assets/parcel-og.png'
-            width='300px'
-          />
+      {
+        data.error === undefined &&
+          <>
+            <Text component='h1' padding='0 0 1rem 0'>
+              Boots
+            </Text>
 
-          <Image
-            src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png'
-            width='300px'
-          />
-        </div>
-      </Section>
-
-      <Footer />
-    </>
+            <Table data={data} />
+          </>
+      }
+    </Container>
   )
 }
 
