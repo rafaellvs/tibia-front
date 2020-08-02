@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <Container id='navbar'>
       <Text component='h1'>
-        React + Parcel
+        tibia-front
       </Text>
     </Container>
   )
