@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import WebFont from 'webfontloader'
+import 'regenerator-runtime'
 
 import Router from 'app/components/Router'
 import GlobalStyles from 'app/helpers/globalStyles'
