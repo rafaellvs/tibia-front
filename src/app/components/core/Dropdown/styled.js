@@ -11,15 +11,10 @@ export const Items = styled.div`
   opacity: 0;
   flex-direction: column;
   background: ${theme.colors.white};
-  padding: .7rem 1rem;
   padding-top: ${theme.navbarHeight};
   top: 0;
   z-index: 1;
   transition: opacity .3s;
-
-  a {
-    padding: .5rem 0
-  }
 `
 
 export const Container = styled.div`

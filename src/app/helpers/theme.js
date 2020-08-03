@@ -1,7 +1,6 @@
 const colors = {
   background: 'rgba(255, 255, 255, .9)',
   hover: '#9c9c9c',
-  hoverDark: '#686868',
   white: 'white',
   black: 'black',
 }
