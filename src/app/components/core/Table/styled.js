@@ -15,6 +15,10 @@ export const CoreTable = styled.table`
     }
   }
 
+  th:last-child {
+    width: 1%;
+  }
+
   tbody tr {
     height: 100px;
     transition: background .3s, height .3s;

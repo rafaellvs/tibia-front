@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { navigate } from '@reach/router'
+import PropTypes from 'prop-types'
+
+import entities from 'app/helpers/entities'
 
 import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
@@ -7,23 +11,29 @@ import Loading from 'app/components/Loading'
 
 import { Container } from './styled'
 
-const Home = () => {
+const Template = ({ entity }) => {
   const [data, setData] = useState({ error: false })
   const [isFetching, setIsFetching] = useState(false)
 
   useEffect(() => {
-    setIsFetching(true)
+    const found = entities.filter(e => e.url === entity).length
 
-    fetch('https://tibia-db.herokuapp.com/boots')
-      .then(response => response.json())
-      .then(response => {
-        setData(response)
-        setIsFetching(false)
-      })
-      .catch(err => {
-        setData({ error: err })
-        setIsFetching(false)
-      })
+    if (!found) navigate('404')
+    else {
+      setIsFetching(true)
+      fetch(`https://tibia-db.herokuapp.com/${entity}`)
+        .then(response => response.json())
+        .then(response => {
+          setData(response)
+          setIsFetching(false)
+        })
+        .catch(err => {
+          setData({ error: err })
+          setIsFetching(false)
+        })
+
+      !found && navigate('404')
+    }
   }, [])
 
   useEffect(() => {
@@ -50,4 +60,8 @@ const Home = () => {
   )
 }
 
-export default Home
+Template.propTypes = {
+  entity: PropTypes.string,
+}
+
+export default Template

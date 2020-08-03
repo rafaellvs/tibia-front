@@ -19,11 +19,11 @@ const AppRouter = () => {
       <MainContent>
         <Container>
           <Router>
-            <Page404 default />
+            <Page404 path='404' />
 
             <Home path='/' />
 
-            <Template path='/boots' />
+            <Template path=':entity' />
           </Router>
         </Container>
       </MainContent>

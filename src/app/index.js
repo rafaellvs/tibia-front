@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { LocationProvider } from '@reach/router'
 import WebFont from 'webfontloader'
 import 'regenerator-runtime'
 
@@ -17,10 +18,10 @@ WebFont.load({
 })
 
 const App = () => (
-  <>
+  <LocationProvider>
     <GlobalStyles />
     <Router />
-  </>
+  </LocationProvider>
 )
 
 ReactDOM.render(<App />, document.getElementById('root'))
