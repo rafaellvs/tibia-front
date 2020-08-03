@@ -1,5 +1,16 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const Link = styled.a``
+import theme from 'app/helpers/theme'
+
+const Link = styled.a`
+  ${css`${theme.variants.default}`}
+
+  transition: color .3s;
+
+  &:hover {
+    color: ${theme.colors.darkHover};
+    text-decoration: none;
+  }
+`
 
 export default Link
