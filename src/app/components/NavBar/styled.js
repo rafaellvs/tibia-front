@@ -4,9 +4,9 @@ import theme from 'app/helpers/theme'
 
 export const Container = styled.nav`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${theme.colors.background};
   height: ${theme.navbarHeight};
+  display: flex;
+  align-items: center;
+  background: ${theme.colors.white};
+  padding: 0 3rem;
 `
