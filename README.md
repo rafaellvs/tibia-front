@@ -15,6 +15,9 @@ run `yarn start`
 
 
 #### toFix:
-`AccordionCell` performs very badly on big pages (like creatures and bosses)
 
 `Template` is responsible for throwing 404s
+
+`Distances` table broken (too many columns. Also change its name to Distance Weapons)
+
+`Rings` has no drop table on tibia wiki
