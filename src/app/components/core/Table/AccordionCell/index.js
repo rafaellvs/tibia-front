@@ -21,7 +21,7 @@ const AccordionCell = ({ content }) => {
     <Container>
       {content.slice(0, resultsToShow)
         .map((item, i) =>
-          <Text key={i}>
+          <Text key={i} variant='hideOverflow'>
             {item},
           </Text>
         )}
@@ -39,7 +39,7 @@ const AccordionCell = ({ content }) => {
             <Content ref={ref} height={height}>
               {content.slice(resultsToShow)
                 .map((item, i) =>
-                  <Text key={i}>
+                  <Text key={i} variant='hideOverflow'>
                     {item},
                   </Text>
                 )}
