@@ -4,15 +4,20 @@ import PropTypes from 'prop-types'
 
 import entities from 'app/helpers/entities'
 
+import { capitalizeString } from 'app/helpers/utils'
+
 import Text from 'app/components/core/Text'
 import Table from 'app/components/core/Table'
 
+import Pagination from 'app/components/Pagination'
 import Loading from 'app/components/Loading'
+import BackToTop from 'app/components/BackToTop'
 
 import { Container } from './styled'
 
 const Template = ({ entity }) => {
-  const [data, setData] = useState({ error: false })
+  const [response, setResponse] = useState({ error: false })
+  const [data, setData] = useState(null)
   const [isFetching, setIsFetching] = useState(false)
 
   useEffect(() => {
@@ -24,15 +29,14 @@ const Template = ({ entity }) => {
       fetch(`https://tibia-db.herokuapp.com/${entity}`)
         .then(response => response.json())
         .then(response => {
-          setData(response)
+          setResponse(response)
+          setData(response.slice(0, 25))
           setIsFetching(false)
         })
         .catch(err => {
-          setData({ error: err })
+          setResponse({ error: err })
           setIsFetching(false)
         })
-
-      !found && navigate('404')
     }
   }, [])
 
@@ -44,16 +48,18 @@ const Template = ({ entity }) => {
     <Container>
       {isFetching && <Loading />}
 
-      {data.error && <Text align='center'>Failed fetching data.</Text>}
+      {response.error && <Text align='center'>Failed fetching data.</Text>}
 
       {
-        data.error === undefined &&
+        data &&
           <>
             <Text component='h1' padding='0 0 1rem 0'>
-              Boots
+              {capitalizeString(entity)}
             </Text>
 
+            <Pagination response={response} setData={setData} />
             <Table data={data} />
+            <BackToTop />
           </>
       }
     </Container>
