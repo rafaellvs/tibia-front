@@ -22,7 +22,7 @@ export const MainContent = styled.div`
   width: 100%;
   padding-top: calc(${theme.navbarHeight} + 6rem);
   padding-bottom: 6rem;
-  max-width: 1200px;
+  max-width: 1300px;
 `
 
 export const Container = styled.div`

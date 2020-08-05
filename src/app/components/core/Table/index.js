@@ -7,7 +7,9 @@ import Tbody from './Tbody'
 import { CoreTable } from './styled'
 
 const Table = ({ data }) => {
-  const columns = Object.keys(data[0])
+  const columns =
+    Object.keys(data[0])
+      .filter(column => column !== 'id')
 
   return (
     <CoreTable>
