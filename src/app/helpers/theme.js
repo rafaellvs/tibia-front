@@ -3,6 +3,7 @@ const colors = {
   hover: '#9c9c9c',
   white: 'white',
   black: 'black',
+  disabled: '#4d4b4d',
 }
 
 const variants = {
