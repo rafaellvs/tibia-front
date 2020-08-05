@@ -31,13 +31,12 @@ const Tbody = ({ columns, data }) =>
         id={row.id}
       >
         {columns.map((column, i) =>
-          column !== 'id' &&
-            <Cell
-              key={i}
-              id={column}
-            >
-              {renderCellContent(column, row[column])}
-            </Cell>
+          <Cell
+            key={i}
+            id={column}
+          >
+            {renderCellContent(column, row[column])}
+          </Cell>
         )}
       </tr>
     )}

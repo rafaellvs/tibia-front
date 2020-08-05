@@ -9,12 +9,11 @@ const Thead = ({ columns }) =>
   <thead>
     <tr>
       {columns.map((column, i) =>
-        column !== 'id' &&
-          <th key={column} id={`${column}-th`}>
-            <Text>
-              {formatAttribute(column)}
-            </Text>
-          </th>
+        <th key={i} id={`${column}-th`}>
+          <Text>
+            {formatAttribute(column)}
+          </Text>
+        </th>
       )}
     </tr>
   </thead>
