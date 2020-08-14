@@ -4,7 +4,7 @@ react app to consume from [tibia-api](https://github.com/rafaellvs/tibia-api)
 
 
 ### overview
-React app that consumes data from tibia-api. Composed (for now) of a navbar with links to existing entities in database. The pages contain a Table that shows each result coming from request.
+React app that consumes data from tibia-api. Composed (for now) of a navbar with links to existing entities in database. The pages contain a Table filled with every item on the requested entity db.
 
 ### run locally
 run `yarn`
