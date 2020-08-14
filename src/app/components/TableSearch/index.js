@@ -16,16 +16,18 @@ const TableSearch = ({ response, setFullData }) => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      const results =
-        response.filter(item =>
-          Object.values(item).some(value =>
-            value && value.toString().toLowerCase().includes(input.toLowerCase())
+      if (input) {
+        const results =
+          response.filter(item =>
+            Object.values(item).some(value =>
+              value && value.toString().toLowerCase().includes(input.toLowerCase())
+            )
           )
-        )
 
-      results.length
-        ? setFullData(results)
-        : setFullData(response)
+        setFullData(results)
+      } else {
+        setFullData(response)
+      }
     }, 500)
 
     return () => clearTimeout(timeout)
