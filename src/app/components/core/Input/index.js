@@ -1,9 +1,13 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+import theme from 'app/helpers/theme'
 
 const Input = styled.input`
-  display: block;
-  width: 100%;
-  margin: ${({ margin }) => margin || '1rem 0 0 0'};
+  ${css`${theme.variants.default}`}
+
+  height: 25px;
+  margin: ${({ margin }) => margin || '0'};
+  padding: .3rem;
 `
 
 export default Input
