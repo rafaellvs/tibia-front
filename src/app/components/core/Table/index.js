@@ -1,29 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+
+import TableSearch from 'app/components/TableSearch'
+import TablePagination from 'app/components/TablePagination'
 
 import Thead from './Thead'
 import Tbody from './Tbody'
 
-import { CoreTable } from './styled'
+import { Nav, CoreTable } from './styled'
 
-const Table = ({ data }) => {
+const Table = ({ response }) => {
+  const [fullData, setFullData] = useState(response)
+  const [data, setData] = useState(response.slice(0, 25))
+
   const columns =
-    Object.keys(data[0])
+    Object.keys(response[0])
       .filter(column => column !== 'id')
 
   return (
-    <CoreTable>
-      <Thead columns={columns} />
-      <Tbody
-        columns={columns}
-        data={data}
-      />
-    </CoreTable>
+    <>
+      <Nav>
+        <TableSearch
+          response={response}
+          setFullData={setFullData}
+        />
+        <TablePagination
+          fullData={fullData}
+          setData={setData}
+        />
+      </Nav>
+
+      <CoreTable>
+        <Thead columns={columns} />
+        <Tbody
+          columns={columns}
+          data={data}
+        />
+      </CoreTable>
+    </>
   )
 }
 
 Table.propTypes = {
-  data: PropTypes.array,
+  response: PropTypes.array,
 }
 
 export default Table
