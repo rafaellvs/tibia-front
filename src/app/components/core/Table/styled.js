@@ -16,11 +16,14 @@ export const CoreTable = styled.table`
 
   th, td {
     text-align: center;
-    padding: .5rem .8rem;
 
     &:first-child, :last-child {
       text-align: left;
     }
+  }
+
+  td {
+    padding: .8rem;
   }
 
   th:first-child {

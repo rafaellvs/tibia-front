@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-import icon from 'assets/images/search-icon.svg'
+import icon from 'assets/images/icon-search.svg'
 
 import Image from 'app/components/core/Image'
 import Input from 'app/components/core/Input'

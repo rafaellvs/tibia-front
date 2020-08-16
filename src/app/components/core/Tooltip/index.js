@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Text from 'app/components/core/Text'
+
 import { Container, TooltipContainer } from './styled'
 
 const Tooltip = ({ content, children }) => {
@@ -9,7 +11,7 @@ const Tooltip = ({ content, children }) => {
       {
         content &&
           <TooltipContainer>
-            <span>{content}</span>
+            <Text>{content}</Text>
           </TooltipContainer>
       }
 
