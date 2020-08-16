@@ -1,6 +1,8 @@
 # tibia-front
 react app to consume from [tibia-api](https://github.com/rafaellvs/tibia-api)
+
 deployed at https://tibia-front.firebaseapp.com/
+
 first render might take a while (i dont know why. Must be something to do with Heroku)
 
 
