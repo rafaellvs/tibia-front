@@ -31,7 +31,11 @@ const Table = ({ response }) => {
       </Nav>
 
       <CoreTable>
-        <Thead columns={columns} />
+        <Thead
+          columns={columns}
+          response={response}
+          setFullData={setFullData}
+        />
         <Tbody
           columns={columns}
           data={data}
