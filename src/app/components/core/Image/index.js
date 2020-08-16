@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 
 import { StyledImage } from './styled'
 
-const Image = ({ src, width, className }) =>
+const Image = ({ src, width, className, ...restProps }) =>
   <StyledImage
     src={src}
     width={width}
     className={className}
+    {...restProps}
   />
 
 Image.propTypes = {
