@@ -1,31 +1,31 @@
 const entities = [
   {
-    name: 'Creature',
+    name: 'Creatures',
     url: 'creatures',
     category: 'Creatures',
   },
   {
-    name: 'Boss',
+    name: 'Bosses',
     url: 'bosses',
     category: 'Creatures',
   },
   {
-    name: 'Sword',
+    name: 'Swords',
     url: 'swords',
     category: 'Weapons',
   },
   {
-    name: 'Axe',
+    name: 'Axes',
     url: 'axes',
     category: 'Weapons',
   },
   {
-    name: 'Club',
+    name: 'Clubs',
     url: 'clubs',
     category: 'Weapons',
   },
   {
-    name: 'Distance',
+    name: 'Distance Weapons',
     url: 'distances',
     category: 'Weapons',
   },
@@ -35,32 +35,32 @@ const entities = [
     category: 'Weapons',
   },
   {
-    name: 'Rod',
+    name: 'Rods',
     url: 'rods',
     category: 'Weapons',
   },
   {
-    name: 'Wand',
+    name: 'Wands',
     url: 'wands',
     category: 'Weapons',
   },
   {
-    name: 'Helmet',
+    name: 'Helmets',
     url: 'helmets',
     category: 'Equipment',
   },
   {
-    name: 'Armor',
+    name: 'Armors',
     url: 'armors',
     category: 'Equipment',
   },
   {
-    name: 'Shield',
+    name: 'Shields',
     url: 'shields',
     category: 'Equipment',
   },
   {
-    name: 'Spellbook',
+    name: 'Spellbooks',
     url: 'spellbooks',
     category: 'Equipment',
   },
@@ -75,19 +75,29 @@ const entities = [
     category: 'Equipment',
   },
   {
-    name: 'Amulet',
+    name: 'Amulets and Necklaces',
     url: 'amulets',
     category: 'Equipment',
   },
   {
-    name: 'Ring',
+    name: 'Rings',
     url: 'rings',
     category: 'Equipment',
   },
   {
-    name: 'LightSource',
+    name: 'Light Sources',
     url: 'lightsources',
     category: 'Equipment',
+  },
+  {
+    name: 'Mounts',
+    url: 'mounts',
+    category: 'More',
+  },
+  {
+    name: 'Spells',
+    url: 'spells',
+    category: 'More',
   },
 ]
 

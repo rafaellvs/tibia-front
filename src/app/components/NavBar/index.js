@@ -1,5 +1,4 @@
 import React from 'react'
-import pluralize from 'pluralize'
 
 import entities from 'app/helpers/entities'
 
@@ -26,7 +25,7 @@ const NavBar = () => {
                 entities.map((entity, index) =>
                   entity.category === category &&
                     <DropdownLink key={index} href={entity.url}>
-                      {pluralize(entity.name)}
+                      {entity.name}
                     </DropdownLink>
                 )
               }
