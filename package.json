@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/assets/index.pug",
-    "build": "parcel build src/assets/index.pug"
+    "build": "rm -rf dist && parcel build src/assets/index.pug"
   },
   "dependencies": {
     "@reach/router": "^1.3.4",
