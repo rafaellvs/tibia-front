@@ -27,7 +27,7 @@
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-standard": "^4.0.1",
     "parcel-bundler": "^1.12.4",
-    "pug": "^3.0.0"
+    "pug": "^3.0.1"
   },
   "alias": {
     "app": "./src/app",
